@@ -31,7 +31,7 @@ ssh:
 	
 .PHONY: essh
 essh:
-	dockssh -e $(IMAGE)
+	dockssh -e some-$(IMAGE)
 
 .PHONY: clean
 clean:
