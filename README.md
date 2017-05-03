@@ -12,7 +12,8 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 * Build image
 * Push image
 * Run image
-* SSH into image and running container
+* SSH into image
+* SSH into running container
 
 
 ## Installation
@@ -35,16 +36,16 @@ curl -OL https://raw.githubusercontent.com/jamrizzi/make4docker/master/Makefile
 ## Usage
 <!------------------------------------------------------->
 
-| Command                   | Description                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| `make`                    | Fetches dependencies, cleans repo, and builds image                                 |
-| `make fetch_dependencies` | Fetches dependencies                                                                |
-| `make pull`               | Pulls image from dockerhub                                                          |
-| `make build`              | Builds image                                                                        |
-| `make push`               | Pushes image to dockerhub                                                           |
-| `make run`                | Runs the image as a container                                                       |
-| `make ssh`                | SSH into image (requires [dockssh](https://github.com/jamrizzi/dockssh)             |
-| `make essh`               | SSH into running container (requires [dockssh](https://github.com/jamrizzi/dockssh) |
+| Command                   | Description                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| `make`                    | Fetches dependencies, cleans repo, and builds image                                  |
+| `make fetch_dependencies` | Fetches dependencies                                                                 |
+| `make pull`               | Pulls image from dockerhub                                                           |
+| `make build`              | Builds image                                                                         |
+| `make push`               | Pushes image to dockerhub                                                            |
+| `make run`                | Runs the image as a container                                                        |
+| `make ssh`                | SSH into image (requires [dockssh](https://github.com/jamrizzi/dockssh))             |
+| `make essh`               | SSH into running container (requires [dockssh](https://github.com/jamrizzi/dockssh)) |
 
 
 ## Support
