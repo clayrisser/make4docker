@@ -9,5 +9,6 @@ MAINTAINER Jam Risser (jamrizzi)
 
 WORKDIR /app/
 
-ENTRYPOINT ["echo"]
-CMD ["hello, world!"]
+RUN apk add --no-cache tini
+
+ENTRYPOINT ["/sbin/tini", "--", "tail", "-f", "/dev/null"]

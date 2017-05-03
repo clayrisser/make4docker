@@ -5,7 +5,7 @@ SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
 DOCKERFILE := $(CWD)/Dockerfile
 
 .PHONY: all
-all: fetch_dependancies sweep build
+all: clean fetch_dependancies build
 
 .PHONY: build
 build:
@@ -26,11 +26,11 @@ push:
 run:
 	docker run --name $(SOME_CONTAINER) --rm $(IMAGE)
 	$(info ran $(IMAGE))
-	
+
 .PHONY: ssh
 ssh:
 	dockssh $(IMAGE)
-	
+
 .PHONY: essh
 essh:
 	dockssh -e $(SOME_CONTAINER)
