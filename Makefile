@@ -1,5 +1,7 @@
+SHELL := /bin/bash
 CWD := $(shell readlink -en $(dir $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))))
 IMAGE := "jamrizzi/make4docker:latest"
+SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
 DOCKERFILE := $(CWD)/Dockerfile
 
 .PHONY: all
@@ -22,7 +24,7 @@ push:
 
 .PHONY: run
 run:
-	docker run --name some-$(IMAGE) --rm $(IMAGE)
+	docker run --name $(SOME_CONTAINER) --rm $(IMAGE)
 	$(info ran $(IMAGE))
 	
 .PHONY: ssh
@@ -31,7 +33,7 @@ ssh:
 	
 .PHONY: essh
 essh:
-	dockssh -e some-$(IMAGE)
+	dockssh -e $(SOME_CONTAINER)
 
 .PHONY: clean
 clean:
