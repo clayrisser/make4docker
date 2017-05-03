@@ -27,9 +27,9 @@ curl -OL https://raw.githubusercontent.com/jamrizzi/make4docker/master/Makefile
 ## Dependencies
 <!------------------------------------------------------->
 
-[Make](https://www.gnu.org/software/make/)
-[Docker](https://www.docker.com/)
-[dockssh](https://github.com/jamrizzi/dockssh)
+* [Make](https://www.gnu.org/software/make/)
+* [Docker](https://www.docker.com/)
+* [dockssh](https://github.com/jamrizzi/dockssh)
 
 
 ## Usage
