@@ -22,18 +22,21 @@ push:
 
 .PHONY: run
 run:
-	docker run $(IMAGE)
-	$(info pushed $(IMAGE))
+	docker run --name some-$(IMAGE) --rm $(IMAGE)
+	$(info ran $(IMAGE))
+	
+.PHONY: ssh
+ssh:
+	dockssh $(IMAGE)
+	
+.PHONY: essh
+essh:
+	dockssh -e $(IMAGE)
 
 .PHONY: clean
-clean: sweep bleach
+clean:
+	# rm -rf ./stuff/to/clean
 	$(info cleaned)
-.PHONY: sweep
-sweep:
-	$(info swept)
-.PHONY: bleach
-bleach:
-	$(info bleached)
 
 .PHONY: fetch_dependancies
 fetch_dependancies: docker
