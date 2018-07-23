@@ -1,14 +1,13 @@
-############################################################
-# Dockerfile to run BlogDown
-# Based on Alpine
-############################################################
+FROM alpine
 
-FROM alpine:3.5
-
-MAINTAINER Jam Risser (jamrizzi)
+LABEL image=codejamninja/erpnext:stable \
+      maintainer="Jam Risser <jam@jamrizzi.com>" \
+      base=debian:stretch-slim
 
 WORKDIR /app/
 
 RUN apk add --no-cache tini
 
-ENTRYPOINT ["/sbin/tini", "--", "tail", "-f", "/dev/null"]
+ENTRYPOINT ["/sbin/tini", "--", "echo"]
+CMD ["hi"]
+

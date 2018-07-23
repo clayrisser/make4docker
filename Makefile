@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 CWD := $(shell pwd)
-IMAGE := "jamrizzi/make4docker:latest"
+IMAGE := "codejamninja/make4docker:latest"
 SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
 DOCKERFILE := $(CWD)/Dockerfile
 
