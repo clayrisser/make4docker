@@ -1,50 +1,40 @@
-SHELL := /bin/bash
 CWD := $(shell pwd)
-IMAGE := "codejamninja/make4docker:latest"
+TAG := latest
+IMAGE := "codejamninja/make4docker:$(TAG)"
 SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
-DOCKERFILE := $(CWD)/Dockerfile
+DOCKERFILE := $(CWD)/$(TAG)/Dockerfile
 
 .PHONY: all
-all: clean fetch_dependancies build
+all: clean build
 
 .PHONY: build
 build:
 	@docker build -t $(IMAGE) -f $(DOCKERFILE) $(CWD)
-	@echo built $(IMAGE)
+	@echo ::: BUILD :::
 
 .PHONY: pull
 pull:
 	@docker pull $(IMAGE)
-	@echo pulled $(IMAGE)
+	@echo ::: PULL :::
 
 .PHONY: push
 push:
 	@docker push $(IMAGE)
-	@echo pushed $(IMAGE)
+	@echo ::: PUSH :::
 
 .PHONY: run
 run:
-	@docker run --name $(SOME_CONTAINER) --rm $(IMAGE)
-	@echo ran $(IMAGE)
+	@docker run --name run$(SOME_CONTAINER) --rm $(IMAGE)
 
 .PHONY: ssh
 ssh:
-	@dockssh $(IMAGE)
+	@docker run --name ssh$(SOME_CONTAINER) --rm -it --entrypoint /bin/sh $(IMAGE)
 
 .PHONY: essh
 essh:
-	@dockssh -e $(SOME_CONTAINER)
+	@docker exec run$(SOME_CONTAINER) /bin/sh
 
 .PHONY: clean
 clean:
-	@echo cleaned
-
-.PHONY: fetch_dependancies
-fetch_dependancies: docker
-	@echo fetched dependancies
-.PHONY: docker
-docker:
-ifeq ($(shell whereis docker), $(shell echo docker:))
-	@curl -L https://get.docker.com/ | bash
-endif
-	@echo fetched docker
+	-@ rm -rf ./stuff/to/clean &>/dev/null || true
+	@echo ::: CLEAN :::
