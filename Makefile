@@ -1,5 +1,6 @@
 CWD := $(shell pwd)
 TAG := latest
+PORT := 8080
 IMAGE := "codejamninja/make4docker:$(TAG)"
 SOME_CONTAINER := $(shell echo some-$(IMAGE) | sed 's/[^a-zA-Z0-9]//g')
 DOCKERFILE := $(CWD)/$(TAG)/Dockerfile
@@ -24,7 +25,7 @@ push:
 
 .PHONY: run
 run:
-	@docker run --name run$(SOME_CONTAINER) --rm $(IMAGE)
+	@docker run --name run$(SOME_CONTAINER) -p $(PORT):$(PORT) --rm $(IMAGE)
 
 .PHONY: ssh
 ssh:
