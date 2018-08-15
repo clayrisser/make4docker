@@ -1,6 +1,6 @@
-# make4docker _Beta_
+# make4docker
 
-Use Make to simplify your Docker builds
+Use GNU Make to simplify your Docker builds
 
 Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 
