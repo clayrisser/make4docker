@@ -1,12 +1,13 @@
 # make4docker
 
-Use GNU Make to simplify your Docker builds
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/make4docker.svg?style=social&label=Stars)](https://github.com/codejamninja/make4docker)
 
-Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
+> Use GNU Make to simplify your Docker builds
+
+Please ★ this repo if you found it useful ★ ★ ★
 
 
 ## Features
-<!------------------------------------------------------->
 
 * Pull image
 * Build image
@@ -17,81 +18,63 @@ Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
 
 
 ## Installation
-<!------------------------------------------------------->
 
 ```sh
-cd /your/special/project
-curl -OL https://raw.githubusercontent.com/jamrizzi/make4docker/master/Makefile
+curl -OL https://raw.githubusercontent.com/codejamninja/make4docker/master/Makefile
 ```
 
 
 ## Dependencies
-<!------------------------------------------------------->
 
-* [Make](https://www.gnu.org/software/make/)
-* [Docker](https://www.docker.com/)
-* [dockssh](https://github.com/jamrizzi/dockssh)
+* [GNU Make](https://www.gnu.org/software/make)
+* [Docker](https://www.docker.com)
 
 
 ## Usage
-<!------------------------------------------------------->
 
-| Command                   | Description                                                                          |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| `make`                    | Fetches dependencies, cleans repo, and builds image                                  |
-| `make fetch_dependencies` | Fetches dependencies                                                                 |
-| `make pull`               | Pulls image from dockerhub                                                           |
-| `make build`              | Builds image                                                                         |
-| `make push`               | Pushes image to dockerhub                                                            |
-| `make run`                | Runs the image as a container                                                        |
-| `make ssh`                | SSH into image (requires [dockssh](https://github.com/jamrizzi/dockssh))             |
-| `make essh`               | SSH into running container (requires [dockssh](https://github.com/jamrizzi/dockssh)) |
+| Command      | Description                  |
+| ------------ | ---------------------------- |
+| `make`       | cleans repo and builds image |
+| `make pull`  | pulls image                  |
+| `make push`  | push image                   |
+| `make build` | builds image                 |
+| `make run`   | runs image                   |
+| `make ssh`   | ssh into image               |
+| `make essh`  | ssh into running container   |
 
 
 ## Support
-<!------------------------------------------------------->
 
-Submit an [issue](https://github.com/jamrizzi/make4docker/issues/new)
-
-
-## Buy Me Coffee
-<!------------------------------------------------------->
-
-A ridiculous amount of coffee was consumed in the process of building this project.
-
-[Add some fuel](https://jamrizzi.com/#!/buy-me-coffee) if you'd like to keep me going!
+Submit an [issue](https://github.com/codejamninja/make4docker/issues/new)
 
 
 ## Contributing
-<!------------------------------------------------------->
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+Review the [guidelines for contributing](https://github.com/codejamninja/make4docker/blob/master/CONTRIBUTING.md)
 
 
 ## License
-<!------------------------------------------------------->
 
-[MIT License](https://github.com/jamrizzi/make4docker/blob/master/LICENSE)
+[MIT License](https://github.com/codejamninja/make4docker/blob/master/LICENSE)
 
-[Jam Risser](https://jamrizzi.com) &copy; 2017
-
-
-## Credits
-<!------------------------------------------------------->
-
-* [Jam Risser](https://jamrizzi.com) - Author
+[Jam Risser](https://codejam.ninja) © 2018
 
 
 ## Changelog
-<!------------------------------------------------------->
 
-0.1.0 (2017-05-03)
-* Beta release
-* Added SSH support
+Review the [changelog](https://github.com/codejamninja/make4docker/blob/master/CHANGELOG.md)
 
-0.0.1 (2017-04-26)
-* Initial release
+
+## Credits
+
+* [Jam Risser](https://codejam.ninja) - Author
+
+
+## Support on Liberapay
+
+A ridiculous amount of coffee ☕ ☕ ☕ was consumed in the process of building this project.
+
+[Add some fuel](https://liberapay.com/codejamninja/donate) if you'd like to keep me going!
+
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)
